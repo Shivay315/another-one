@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Anime List</h1>
+
+    <div class="controls">
+        <label>Filter by Genre:
+            <input type="text" id="genreFilter" placeholder="e.g. Isekai">
+        </label>
+        <label>Min Rating:
+            <input type="number" id="ratingFilter" min="0" max="10" step="0.1">
+        </label>
+        <button onclick="applyFilters()">Apply Filters</button>
+
+        <label>Sort By:
+            <select id="sortOption">
+                <option value="title">Title</option>
+                <option value="episodes">Episodes</option>
+                <option value="rating">Rating</option>
+            </select>
+        </label>
+        <button onclick="applySorting()">Sort</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Episodes</th>
+                <th>Rating</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="animeTable"></tbody>
+    </table>
+
+    <h2>Add / Update Anime</h2>
+    <div class="form-container">
+        <input type="hidden" id="animeId">
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="genre" placeholder="Genre (comma separated)">
+        <input type="number" id="episodes" placeholder="Episodes">
+        <input type="number" id="rating" placeholder="Rating" step="0.1">
+        <button onclick="addOrUpdateAnime()">Save</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
