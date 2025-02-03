@@ -16,3 +16,4 @@
 open browser
 search http://localhost:4444/
 
+remember to kill every terminal window by using Ctrl+C before closing your programs
